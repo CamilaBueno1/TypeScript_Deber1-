@@ -1,0 +1,24 @@
+# Deber1_TypeScript
+
+Proyecto con React + TypeScript + Vite.
+
+## Requisitos
+
+- [Node.js](https://nodejs.org/) (v18 o superior)
+
+## Cómo ejecutar
+
+1. Instalar dependencias:
+
+```bash
+npm install
+```
+
+2. Levantar el servidor de desarrollo:
+
+```bash
+npm run dev
+```
+
+3. Abrir en el navegador la dirección que muestra en consola (por defecto `http://localhost:5173`).
+
