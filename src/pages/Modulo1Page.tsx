@@ -4,12 +4,12 @@ import { CalcularDanio } from "../utils/CalcularDanio";
 
 export const Modulo1Page = () => {
     //1.Inferencia vs anotacion
-    let saga ="Saiyan Saga"; // valor inferido  
+    let saga ="Saiyan Saga"; // valor inferido o asumido 
     let horasEntrenamiento:number = 36; // valor anotado
 
     //2.Tipos basicos 
     let guerrero: string ="Goku";
-    const ki:number = 9001; // number -> enteros y decimales
+    const ki:number = 9001; // number -> vale para enteros y decimales
     const enCombate:boolean = true;
 
     //3.arrays
@@ -19,9 +19,9 @@ export const Modulo1Page = () => {
     const coordenadas:[number,number, string] = [42,17,"hola"]
 
     //5.Funciones tipadas (parametros + retorno)
-   /* function calcularDanio(base:number ,multiplicador:number):number{
+   function calcularDanio(base:number ,multiplicador:number):number{
         return base * multiplicador
-    }*/
+    }
 
     //6.null y undefined
     let transformacion:string | null = null;
@@ -94,12 +94,8 @@ export const Modulo1Page = () => {
                     <h2 className="text-x1 font-medium text-blue-300 mb-2">
                         Any y unknown
                     </h2>
-                    <div>
-                        Any : {variableLibre}
-                    </div>
-                    <div>
-                        Evento :{eventoMayus}
-                    </div>
+                    <div>Any : {variableLibre}</div>
+                    <div> Evento :{eventoMayus}</div>
                 </section>
         </div>
         </main>

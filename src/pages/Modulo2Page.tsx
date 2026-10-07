@@ -14,14 +14,16 @@ export const Modulo2Page  =({initial=0, step = 1}:ContadorProps) =>{
     const[tazas,setTazas] =useState(1)
     
     type Ingredientes = "agua"| "cafe"|"azucar"
+    //Se puede poner ? para que sea opcional
     type RecetaCafe = {
         agua?: number;
         cafe?:number;
         azucar?:number; 
     };
+
     type CafePreparado ={
         mensaje:string;
-        intensidad:"suave"|"fuerte"; //uniones literales
+        intensidad:"suave"|"fuerte"; //uniones literales -> Solo pueden tener valores especificos  
     };
     //explicito - union literal
     const[intensidadUI, setIntensidadUI] =useState<CafePreparado["intensidad"]>
@@ -32,13 +34,14 @@ export const Modulo2Page  =({initial=0, step = 1}:ContadorProps) =>{
     //valores que pueden ser undefined
     const [azucarIn,setAzucarIn] = useState<number | undefined>(undefined)
     //interface
-    //Padre
-   interface RecetaBase {
+    //Las interfaces se pueden extender y unir 
+   interface RecetaBase { //Padre
     agua:number;
     cafe:number;
    }
    //Hijo
-   interface RecetaAzucar extends RecetaBase{ //se extiende del padre hacia el hijo 
+   //se extiende del padre hacia el hijo -POO
+   interface RecetaAzucar extends RecetaBase{ 
     azucar:number; 
    }
 
@@ -54,9 +57,8 @@ export const Modulo2Page  =({initial=0, step = 1}:ContadorProps) =>{
     function preparaCafe({agua=0 ,cafe=0, azucar=0}:RecetaCafe):CafePreparado{
         const intensidad = cafe > 10 ? "fuerte":"suave";
         return{
-            mensaje : `Cafe listo con ${agua} ml de agua y +
-            ${cafe}g de cafe`+(azucar?`+${azucar}g de azucar`:
-            ""),
+            mensaje : `Cafe listo con ${agua} ml de agua y + ${cafe}g de cafe`
+            +(azucar?`+${azucar}g de azucar`:""),
             intensidad,
         };
     };
@@ -101,9 +103,11 @@ export const Modulo2Page  =({initial=0, step = 1}:ContadorProps) =>{
             </button>
             <span>state tipados</span>
             {intensidadUI}
+            
             <button onClick={()=>setIntensidadUI("fuerte")}>cambiar state</button>
             <span>Contador</span>
             <button className="rounded-md border border-neutral-700 bg-neutral-800 px-3 py-1 hover:bg-neutral-700 text-amber-50 " onClick={dec}>-</button>
+
             <span className="min-w-[3ch] text-center text-2x1 font-semibold">{count}</span>
             <button className="rounded-md border border-neutral-700 bg-neutral-800 px-3 py-1 hover:bg-neutral-700 text-amber-50 " onClick={inc}>+</button>
             
