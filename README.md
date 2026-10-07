@@ -1,24 +1,29 @@
-# Deber1_TypeScript
+# React + TypeScript - Deber 1
 
-Proyecto con React + TypeScript + Vite.
+## Descripción
+Deber de TypeScript basado en tutorial de YouTube
 
-## Requisitos
-
-- [Node.js](https://nodejs.org/) (v18 o superior)
-
-## Cómo ejecutar
-
-1. Instalar dependencias:
-
+## Instalación
 ```bash
 npm install
 ```
-
-2. Levantar el servidor de desarrollo:
-
+## Ejecución
 ```bash
-npm run dev
+npm run dev 
 ```
 
-3. Abrir en el navegador la dirección que muestra en consola (por defecto `http://localhost:5173`).
+## Capturas
+
+### Inicio
+
+![Pantalla de inicio](docs/images/home.png)
+
+### Módulo 1
+<img width="1122" height="466" alt="image" src="https://github.com/user-attachments/assets/db9d3058-4221-4295-984a-d84acaa9339a" />
+
+### Módulo 2
+
+![Módulo 2 con TypeScript](docs/images/modulo2.png)
+
+
 
