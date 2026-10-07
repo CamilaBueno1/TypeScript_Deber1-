@@ -12,27 +12,27 @@ export const Modulo2Page  =({initial=0, step = 1}:ContadorProps) =>{
 
     //inferido 
     const[tazas,setTazas] =useState(1)
-    
     type Ingredientes = "agua"| "cafe"|"azucar"
+
     //Se puede poner ? para que sea opcional
     type RecetaCafe = {
         agua?: number;
         cafe?:number;
         azucar?:number; 
     };
-
     type CafePreparado ={
         mensaje:string;
         intensidad:"suave"|"fuerte"; //uniones literales -> Solo pueden tener valores especificos  
     };
+
     //explicito - union literal
     const[intensidadUI, setIntensidadUI] =useState<CafePreparado["intensidad"]>
     ("suave")
-
     //explicito con null
     const[ultimoCade,setUltimoCafe]=useState<CafePreparado | null>(null);
     //valores que pueden ser undefined
     const [azucarIn,setAzucarIn] = useState<number | undefined>(undefined)
+
     //interface
     //Las interfaces se pueden extender y unir 
    interface RecetaBase { //Padre
@@ -48,6 +48,7 @@ export const Modulo2Page  =({initial=0, step = 1}:ContadorProps) =>{
    interface MaquinaCafe{
     modelo:string;
     }
+    
    interface MaquinaCafe{
     aguaMax?:number
     };
